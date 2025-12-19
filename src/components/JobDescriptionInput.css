@@ -1,0 +1,101 @@
+.job-description-input {
+    margin-bottom: var(--spacing-xl);
+}
+
+.input-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.input-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.input-title h3 {
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+.title-icon {
+    color: var(--primary-purple);
+}
+
+.clear-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-family);
+}
+
+.clear-btn:hover {
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border-color: var(--primary-purple);
+}
+
+.input-description {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.textarea-wrapper {
+    position: relative;
+}
+
+.job-description-textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: var(--spacing-md);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    resize: vertical;
+    transition: all var(--transition-base);
+}
+
+.job-description-textarea:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.job-description-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.char-count {
+    position: absolute;
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    background: var(--bg-dark);
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+}
+
+@media (max-width: 768px) {
+    .input-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}

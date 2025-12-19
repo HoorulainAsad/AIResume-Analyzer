@@ -1,0 +1,239 @@
+.resume-upload {
+    margin-bottom: var(--spacing-xl);
+}
+
+.upload-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.upload-header h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xs);
+}
+
+.upload-header p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.upload-zone {
+    background: var(--glass-bg);
+    border: 2px dashed var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-zone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(102, 126, 234, 0.1),
+            transparent);
+    transition: left 0.5s;
+}
+
+.upload-zone:hover::before {
+    left: 100%;
+}
+
+.upload-zone.drag-active {
+    border-color: var(--primary-purple);
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-zone.has-file {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.05);
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.upload-icon {
+    color: var(--primary-purple);
+    transition: all var(--transition-base);
+}
+
+.upload-icon.success {
+    color: var(--accent-cyan);
+}
+
+.upload-zone:hover .upload-icon {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 5px 15px rgba(102, 126, 234, 0.5));
+}
+
+.upload-text {
+    text-align: center;
+}
+
+.upload-text h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xs);
+}
+
+.upload-text p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.file-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    margin-top: var(--spacing-xs);
+}
+
+.file-size {
+    color: var(--text-muted) !important;
+    font-size: var(--font-size-xs) !important;
+}
+
+.upload-formats {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.format-badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(245, 87, 108, 0.1);
+    border: 1px solid rgba(245, 87, 108, 0.3);
+    border-radius: var(--radius-md);
+    color: #f5576c;
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+/* Rating System Styles */
+.rating-container {
+    margin: var(--spacing-md) 0;
+    text-align: center;
+}
+
+.rating-label {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stars {
+    display: flex;
+    gap: var(--spacing-xs);
+    justify-content: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.star {
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.star-empty {
+    color: var(--glass-border);
+    fill: transparent;
+}
+
+.star-filled {
+    color: #fbbf24;
+    fill: #fbbf24;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+.rating-text {
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    margin-top: var(--spacing-xs);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .upload-zone {
+        padding: var(--spacing-xl);
+    }
+
+    .upload-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .upload-text h3 {
+        font-size: var(--font-size-base);
+    }
+
+    .upload-text p {
+        font-size: var(--font-size-xs);
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .upload-zone {
+        padding: var(--spacing-md);
+    }
+
+    .upload-header h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .format-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .stars {
+        gap: 0.25rem;
+    }
+
+    .star {
+        width: 20px;
+        height: 20px;
+    }
+}
